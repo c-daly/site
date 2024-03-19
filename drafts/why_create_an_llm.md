@@ -19,6 +19,10 @@ The meat of the article will discuss a simple decoder-only model created from sc
 # Concepts to discuss ahead of time
 ## Tokenization - BPE
 ## Attention
+### Self-attention
+### Scaled dot product attention
+### Multi-head attention
+## Positional encoding
 ## Transformers
 ## Positional encoding
 ## Multi-head attention
@@ -39,4 +43,22 @@ What will the data look like? Presumably just a big text column? The question is
 ## what optimizer?
 
 # Training
-
+- $\pi \approx 3.14159$
+- $\pm \, 0.2$
+- $\dfrac{0}{1} \neq \infty$
+- $0 < x < 1$
+- $0 \leq x \leq 1$
+- $x \geq 10$
+- $\forall \, x \in (1,2)$
+- $\exists \, x \notin [0,1]$
+- $A \subset B$
+- $A \subseteq B$
+- $A \cup B$
+- $A \cap B$
+- $X \implies Y$
+- $X \impliedby Y$
+- $a \to b$
+- $a \longrightarrow b$
+- $a \Rightarrow b$
+- $a \Longrightarrow b$
+- $a \propto b$
