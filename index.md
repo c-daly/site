@@ -5,7 +5,7 @@
 
 ## 👋 About Me
 
-I'm a software engineer with over 15 years of experience in building scalable, robust web and cloud-native applications. I recently completed a Master’s in Computer Science at Northeastern University, focusing on intelligent agents, machine learning, and robotics. I'm passionate about creating modular, explainable systems that address complex, real-world challenges.
+I'm a software engineer with over 15 years of experience in building scalable, robust web and cloud-native applications. I recently completed a Master’s in Computer Science at Northeastern University, focusing on intelligent agents, machine learning, and system design. I design robots for fun, and I'm passionate about creating modular, explainable systems that address complex, real-world challenges.
 
 ---
 
