@@ -1,7 +1,4 @@
 # Christopher D. Daly
-
-**Software Engineer | AI/ML Enthusiast | Intelligent Systems & Agent Design**
-
 🌐 [LinkedIn](https://linkedin.com/in/c-daly) | [GitHub](https://github.com/c-daly)
 
 ---
