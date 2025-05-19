@@ -3,7 +3,5 @@ layout: post
 ---
 
 ## Welcome to another page
-
-_yay_
-
+Posts incoming soon
 [back](./)
