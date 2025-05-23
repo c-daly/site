@@ -30,7 +30,7 @@ I'm a software engineer with over 15 years of experience in building scalable, r
 
 * Built and configured a TurtleBot3 robot with ROS2.
 * Customized with Slamtec RPLidar and Cartographer SLAM for autonomous navigation.
-* Designed and 3D printed custom mounts for sensors and electronics.
+* 3D printed all structural elements.
 
 ### 🛞 Exploratory Robotics Builds
 
