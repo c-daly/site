@@ -16,6 +16,9 @@ export function Hero() {
           <a className="btn btn--primary" href={`mailto:${profile.email}`}>
             Email {profile.name.split(' ')[0]}
           </a>
+          <a className="btn btn--ghost" href={profile.resume} target="_blank" rel="noreferrer">
+            View resume
+          </a>
           {profile.socials.map((social) => (
             <a key={social.label} className="btn btn--ghost" href={social.url} target="_blank" rel="noreferrer">
               {social.label}
@@ -23,17 +26,20 @@ export function Hero() {
           ))}
         </div>
       </div>
-      <div className="hero__metrics" aria-label="career metrics">
-        <article>
-          <span className="hero__name">{profile.name}</span>
+      <div className="hero__card" aria-label="career metrics">
+        <div className="hero__identity">
+          <p className="hero__label">Currently</p>
+          <h2>{profile.name}</h2>
           <p>{profile.role}</p>
-        </article>
-        {profile.metrics.map((metric) => (
-          <article key={metric.label}>
-            <span>{metric.value}</span>
-            <p>{metric.label}</p>
-          </article>
-        ))}
+        </div>
+        <div className="hero__metrics">
+          {profile.metrics.map((metric) => (
+            <article key={metric.label}>
+              <span>{metric.value}</span>
+              <p>{metric.label}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

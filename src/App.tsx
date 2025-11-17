@@ -1,7 +1,8 @@
 import { Hero } from './sections/Hero';
-import { Achievements } from './sections/Achievements';
+import { Experience } from './sections/Experience';
 import { Projects } from './sections/Projects';
-import { Interests } from './sections/Interests';
+import { Skills } from './sections/Skills';
+import { GithubShowcase } from './sections/GithubShowcase';
 import { Contact } from './sections/Contact';
 import './App.scss';
 
@@ -11,9 +12,10 @@ function App() {
       <div className="background-texture" aria-hidden />
       <main>
         <Hero />
-        <Achievements />
+        <Experience />
         <Projects />
-        <Interests />
+        <Skills />
+        <GithubShowcase />
         <Contact />
       </main>
     </div>
