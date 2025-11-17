@@ -1,0 +1,16 @@
+- title: Sophia multi-modal agent
+  domain: Applied AI
+  summary: Built a modular planner-memory-tool chain with knowledge-graph-backed RAG for enterprise demos.
+  metric: Enabled 6 guided demos/week with 0 incidents by adding guardrails and observability.
+- title: Autonomous TurtleBot3 lab
+  domain: Robotics
+  summary: Delivered SLAM + navigation stack with custom ROS2 nodes, EKF localization, and remote teleop UX.
+  metric: Reduced demo setup time from 3 hours to 20 minutes via repeatable maps + fixtures.
+- title: Billing & analytics rebuilds
+  domain: Platform engineering
+  summary: Modernized ETL pipelines and near-real-time analytics for SaaS finance teams across two orgs.
+  metric: Cut reconciliation latency 40% and removed 4+ manual reporting scripts.
+- title: ML research notebooks
+  domain: Data science
+  summary: Benchmarked embedding models and clustering approaches on enterprise corpora with reproducible tooling.
+  metric: Shared findings that shaped vendor choices for 3 partner teams.

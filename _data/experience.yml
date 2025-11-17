@@ -1,0 +1,24 @@
+- company: Kessel Run / USAF (Concept Solutions)
+  role: Software Engineer
+  location: Boston, MA
+  period: 2020 – 2021
+  achievements:
+    - Built cloud-native rule engines and messaging services deployed on Kubernetes clusters.
+    - Created feature-flagged API surface that enabled weekly releases to classified networks.
+    - Partnered with product + operators to cut manual flight planning steps by 30%.
+- company: WordStream (Gannett)
+  role: Software Engineer
+  location: Boston, MA
+  period: 2017 – 2020
+  achievements:
+    - Modernized billing + analytics dataflows, unlocking accurate SaaS revenue reporting.
+    - Integrated Salesforce + Intercom event streams for sales insights in under 90 days.
+    - Coached new hires via internal training and lightweight architecture reviews.
+- company: Rightpoint Consulting
+  role: Senior Developer
+  location: Boston, MA
+  period: 2015 – 2017
+  achievements:
+    - Delivered Sitecore/Episerver solutions for Fortune 500 clients with focus on DX.
+    - Led code reviews, pairing sessions, and internal hack nights to spread best practices.
+    - Built reusable component library adopted across 4 client engagements.
