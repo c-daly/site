@@ -114,3 +114,7 @@ If you'd like to preview the theme locally (for example, in the process of propo
 ### Running tests
 
 The theme contains a minimal test suite, to ensure a site with the theme would build successfully. To run the tests, simply run `script/cibuild`. You'll need to run `script/bootstrap` once before the test script will work.
+
+`script/cibuild` now disables htmlproofer's external link checks so CI no longer fails on locked-down destinations such as Google Docs or LinkedIn profiles. If you want to audit external URLs locally, rerun htmlproofer without the `--disable-external` flag after the build completes.
+
+Likewise, CSS validation is opt-in because the W3C service still mis-reports newer properties like `clamp()` and CSS custom properties. If you really need to lint the compiled CSS, run `VALIDATE_CSS=true bundle exec script/validate-html`.

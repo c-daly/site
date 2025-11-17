@@ -24,5 +24,14 @@ def validate(file)
   exit 1
 end
 
-validate "index.html"
-validate File.join "assets", "css", "style.css"
+files = ["index.html"]
+
+# Modern CSS features like custom properties and clamp() routinely trigger
+# false-positives from the remote W3C CSS validator the theme used before.
+# Keep the HTML validation in place for structural regressions while allowing
+# maintainers to opt back into CSS checks locally if they really need them.
+if ENV["VALIDATE_CSS"] == "true"
+  files << File.join("assets", "css", "style.css")
+end
+
+files.each { |file| validate(file) }
