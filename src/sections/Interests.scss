@@ -1,0 +1,37 @@
+.interests {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+.interest-card {
+  border: 1px solid var(--stroke);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.015);
+
+  h3 {
+    margin: 0 0 0.5rem;
+  }
+
+  p {
+    margin: 0 0 0.75rem;
+    color: var(--text-muted);
+  }
+
+  &__examples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    span {
+      border-radius: 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 0.3rem 0.8rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+  }
+}

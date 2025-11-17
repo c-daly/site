@@ -1,61 +1,110 @@
-export type Highlight = {
+export type Profile = {
+  name: string;
+  role: string;
+  tagline: string;
+  summary: string;
+  location: string;
+  availability: string;
+  email: string;
+  socials: { label: string; url: string }[];
+  metrics: { label: string; value: string }[];
+};
+
+export type Achievement = {
   title: string;
   description: string;
-  metric: string;
+  detail: string;
 };
 
-export type Workstream = {
+export type Project = {
   title: string;
-  summary: string;
+  description: string;
   stack: string[];
-  status: 'active' | 'pilot' | 'handoff';
-  impact: string;
+  link: string;
 };
 
-export const highlights: Highlight[] = [
+export type Interest = {
+  title: string;
+  description: string;
+  examples: string[];
+};
+
+export const profile: Profile = {
+  name: 'Alex Robbins',
+  role: 'Systems engineer & delivery lead',
+  tagline: 'I build calm, human-centered products across AI, robotics, and civic tech.',
+  summary:
+    'I pair messy, high-stakes ideas with rigorous delivery so teams can celebrate launches instead of firefights.',
+  location: 'Seattle, WA · Remote friendly',
+  availability: 'Accepting embedded leadership and advisory projects for Q3 2024.',
+  email: 'hello@alexrobbins.com',
+  socials: [
+    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/alexrobbins' },
+    { label: 'GitHub', url: 'https://github.com/alexrobbins' }
+  ],
+  metrics: [
+    { label: 'Products shipped', value: '24' },
+    { label: 'Cross-functional teams led', value: '11' },
+    { label: 'Cycle time reduced', value: '35%' }
+  ]
+};
+
+export const achievements: Achievement[] = [
   {
-    title: 'Multi-agent dispatch spine',
-    description: 'Productionized agent orchestration that routes 2K+ fulfillment tasks per day across markets.',
-    metric: '98.7% on-time completions'
+    title: 'Global fulfillment intelligence launch',
+    description: 'Directed the rebuild of a logistics control tower that now orchestrates 2K+ daily robot dispatches.',
+    detail: 'Blended ROS telemetry, LLM-based exception handling, and human review loops with <2% downtime.'
   },
   {
-    title: 'Robotics telemetry fabric',
-    description: 'Unified robot ops metrics into a single warehouse dashboard with predictive maintenance alerts.',
-    metric: '32% downtime avoided'
+    title: 'Trusted AI review council',
+    description: 'Built the governance program that approves every generative AI experiment across the enterprise.',
+    detail: 'Authored policy, scorecards, and red-team drills adopted by legal, product, and public policy groups.'
   },
   {
-    title: 'Trusted AI council',
-    description: 'Chaired the policy workstream that now reviews every generative AI launch for privacy risk.',
-    metric: '12 approvals shipped'
+    title: 'Community research residency',
+    description: 'Designed pro-bono civic tech sprints focused on climate adaptation and equitable transit.',
+    detail: 'Mentored 18 fellows and shipped tools now used by two municipal innovation offices.'
   }
 ];
 
-export const workstreams: Workstream[] = [
+export const projects: Project[] = [
   {
-    title: 'Autonomous floor runner',
-    summary: 'Blending LLM planning with a micro-ROS drive stack so floor associates get every pick staged ahead of time.',
-    stack: ['ROS 2', 'LLM planner', 'Edge TPU'],
-    status: 'active',
-    impact: 'Projected 18% faster replenishment across 430 stores.'
+    title: 'Navigation Copilot',
+    description:
+      'A planning assistant that narrates warehouse robot routes, provides safety context, and flags blockers in plain language.',
+    stack: ['TypeScript', 'LangGraph', 'ROS 2', 'Supabase'],
+    link: 'https://github.com/example/navigation-copilot'
   },
   {
-    title: 'Capital forecasting copilots',
-    summary: 'Pairing treasury analysts with copilots that narrate deltas, risk flags, and supporting evidence in seconds.',
-    stack: ['Next.js', 'LangChain', 'Vertex AI'],
-    status: 'pilot',
-    impact: '4x faster scenario modeling for the finance steering committee.'
+    title: 'Capital Signals Briefing',
+    description:
+      'Interactive dashboards plus AI summaries that help finance leaders explore risk scenarios in minutes.',
+    stack: ['Next.js', 'Remix Charts', 'OpenAI API'],
+    link: 'https://github.com/example/capital-signals'
   },
   {
-    title: 'LLM governance kit',
-    summary: 'Packaging prompts, guardrails, and audit metadata so every product org can launch responsibly by default.',
-    stack: ['Open Policy Agent', 'Supabase', 'TypeScript'],
-    status: 'handoff',
-    impact: 'Adopted by 7 product lines after a 6-week residency.'
+    title: 'Civic Data Commons',
+    description:
+      'An open data toolkit that lets local governments publish sensor, mobility, and grant data with built-in context.',
+    stack: ['Python', 'FastAPI', 'PostgreSQL', 'Terraform'],
+    link: 'https://github.com/example/civic-data-commons'
   }
 ];
 
-export const metrics = [
-  { label: 'initiatives shipped', value: '24' },
-  { label: 'teams embedded', value: '11' },
-  { label: 'cycle time cut', value: '35%' }
+export const interests: Interest[] = [
+  {
+    title: 'Human-centered autonomy',
+    description: 'Pairing robots with frontline experts so automation augments instead of replaces their craft.',
+    examples: ['Narrated robot telemetry', 'Shared control interfaces', 'Trust rituals inside ops teams']
+  },
+  {
+    title: 'Responsible AI acceleration',
+    description: 'Operationalizing privacy, auditability, and education as part of every build pipeline.',
+    examples: ['Lightweight red-teaming', 'Consent-aware data pipelines', 'Playbooks for exec + IC levels']
+  },
+  {
+    title: 'Civic impact & climate resilience',
+    description: 'Making the boring-but-critical infra legible to residents, activists, and policymakers.',
+    examples: ['Transit reliability dashboards', 'Community climate briefings', 'Grant tracking for grassroots orgs']
+  }
 ];
