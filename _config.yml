@@ -1,17 +1,6 @@
-title: Christopher D. Daly
-logo:
-description: >-
-  AI + robotics engineer shipping explainable intelligent systems, modular tooling,
-  and enterprise-ready demos.
-location: Boston, MA
-email: cdaly@outlook.com
-links:
-  github: https://github.com/c-daly
-  linkedin: https://linkedin.com/in/c-daly
-  blog: https://github.com/c-daly?tab=repositories
-  resume: https://docs.google.com/document/d/1X-BJ4W-r2OqdXU4NEoO34GLZs3uDyN7h/edit
-show_downloads: false
+title: Christopher Daly
+  #logo: /assets/img/logo.png
+description: About Me
+show_downloads: False
 google_analytics:
 theme: jekyll-theme-minimal
-plugins:
-  - jekyll-seo-tag
