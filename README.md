@@ -26,3 +26,11 @@ copy is quick.
 - `_data/highlights.yml`, `_data/workstreams.yml`, and `_data/metrics.yml` power the cards on the homepage.
 - `assets/css/styles.css` contains the visual system.
 - `index.md` describes the hero, narrative, and CTAs.
+
+## Deployment notes
+
+- GitHub Pages is configured for the custom domain listed in `CNAME` (`cdaly.me`). If you change the
+  domain or temporarily test on a different hostname, remember to update this file so Pages stops
+  reporting merge conflicts related to the missing CNAME during deploys.
+- The public `LICENSE` file is required for the Pages build to stay consistent with the upstream
+  repository, so keep it in place even if you do not expect community contributions.
