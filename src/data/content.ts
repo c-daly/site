@@ -6,14 +6,18 @@ export type Profile = {
   location: string;
   availability: string;
   email: string;
+  resume: string;
   socials: { label: string; url: string }[];
   metrics: { label: string; value: string }[];
 };
 
-export type Achievement = {
-  title: string;
-  description: string;
-  detail: string;
+export type Experience = {
+  company: string;
+  role: string;
+  period: string;
+  location: string;
+  summary: string;
+  highlights: string[];
 };
 
 export type Project = {
@@ -23,47 +27,75 @@ export type Project = {
   link: string;
 };
 
-export type Interest = {
+export type SkillGroup = {
   title: string;
-  description: string;
-  examples: string[];
+  items: string[];
 };
+
+export type GithubProfile = {
+  username: string;
+  note: string;
+};
+
+const assetBase = import.meta.env.BASE_URL ?? '/';
 
 export const profile: Profile = {
   name: 'Alex Robbins',
-  role: 'Systems engineer & delivery lead',
-  tagline: 'I build calm, human-centered products across AI, robotics, and civic tech.',
+  role: 'Systems engineer · delivery lead',
+  tagline: 'Guiding resilient robotics & AI programs from sketchbook to launch.',
   summary:
-    'I pair messy, high-stakes ideas with rigorous delivery so teams can celebrate launches instead of firefights.',
+    'I synthesize research, prototyping, and delivery rituals so emerging-technology teams can move quickly without trading away trust or safety.',
   location: 'Seattle, WA · Remote friendly',
   availability: 'Accepting embedded leadership and advisory projects for Q3 2024.',
   email: 'hello@alexrobbins.com',
+  resume: `${assetBase}alex-robbins-resume.pdf`,
   socials: [
     { label: 'LinkedIn', url: 'https://www.linkedin.com/in/alexrobbins' },
     { label: 'GitHub', url: 'https://github.com/alexrobbins' }
   ],
   metrics: [
     { label: 'Products shipped', value: '24' },
-    { label: 'Cross-functional teams led', value: '11' },
+    { label: 'Robotics programs led', value: '8' },
     { label: 'Cycle time reduced', value: '35%' }
   ]
 };
 
-export const achievements: Achievement[] = [
+export const experiences: Experience[] = [
   {
-    title: 'Global fulfillment intelligence launch',
-    description: 'Directed the rebuild of a logistics control tower that now orchestrates 2K+ daily robot dispatches.',
-    detail: 'Blended ROS telemetry, LLM-based exception handling, and human review loops with <2% downtime.'
+    company: 'Northwind Robotics',
+    role: 'Head of Autonomy Delivery',
+    period: '2021 — Present',
+    location: 'Remote',
+    summary: 'Own the roadmap and rituals for a 40-person team shipping human-in-the-loop warehouse automation.',
+    highlights: [
+      'Directed the rollout of a navigation copilot that reduced exception escalations by 43% across 3 sites.',
+      'Introduced reliability reviews, observability dashboards, and pre-flight simulations used by every launch team.',
+      'Partnered with customer ops to codify trust metrics and executive briefings adopted company-wide.'
+    ]
   },
   {
-    title: 'Trusted AI review council',
-    description: 'Built the governance program that approves every generative AI experiment across the enterprise.',
-    detail: 'Authored policy, scorecards, and red-team drills adopted by legal, product, and public policy groups.'
+    company: 'Civic Systems Lab',
+    role: 'Principal Systems Engineer',
+    period: '2018 — 2021',
+    location: 'Seattle, WA',
+    summary: 'Built civic tech programs with municipalities focused on climate resilience and equitable transit.',
+    highlights: [
+      'Coached 18 fellows through discovery sprints that surfaced climate adaptation backlogs for two cities.',
+      'Designed secure, open-data workflows that now publish 40+ public datasets with automatic documentation.',
+      'Launched a community research residency that paired residents with rapid-response engineering support.'
+    ]
   },
   {
-    title: 'Community research residency',
-    description: 'Designed pro-bono civic tech sprints focused on climate adaptation and equitable transit.',
-    detail: 'Mentored 18 fellows and shipped tools now used by two municipal innovation offices.'
+    company: 'Aero & Co',
+    role: 'Staff Product Engineer',
+    period: '2014 — 2018',
+    location: 'Portland, OR',
+    summary: 'Scaled predictive maintenance tools for industrial fleets and translated R&D into shipping software.',
+    highlights: [
+      'Delivered a cross-platform diagnostics toolkit adopted by 200+ field technicians in the first quarter.',
+      'Led refactors that halved build times and removed 30% of production toil for the platform team.',
+      'Negotiated roadmap tradeoffs between exec, legal, and safety teams to keep modernization work funded.'
+    ]
   }
 ];
 
@@ -71,40 +103,42 @@ export const projects: Project[] = [
   {
     title: 'Navigation Copilot',
     description:
-      'A planning assistant that narrates warehouse robot routes, provides safety context, and flags blockers in plain language.',
+      'Bilingual mission briefings for AMR fleets. Surfaces route health, obstacles, and mitigations without needing to scrub logs.',
     stack: ['TypeScript', 'LangGraph', 'ROS 2', 'Supabase'],
     link: 'https://github.com/example/navigation-copilot'
   },
   {
     title: 'Capital Signals Briefing',
     description:
-      'Interactive dashboards plus AI summaries that help finance leaders explore risk scenarios in minutes.',
+      'Interactive dashboards with AI-generated narratives that help finance leaders pressure-test scenarios in minutes.',
     stack: ['Next.js', 'Remix Charts', 'OpenAI API'],
     link: 'https://github.com/example/capital-signals'
   },
   {
     title: 'Civic Data Commons',
     description:
-      'An open data toolkit that lets local governments publish sensor, mobility, and grant data with built-in context.',
+      'Open-data toolkit that adds policy context, provenance, and ethics notes for municipal data portals.',
     stack: ['Python', 'FastAPI', 'PostgreSQL', 'Terraform'],
     link: 'https://github.com/example/civic-data-commons'
   }
 ];
 
-export const interests: Interest[] = [
+export const skillGroups: SkillGroup[] = [
   {
-    title: 'Human-centered autonomy',
-    description: 'Pairing robots with frontline experts so automation augments instead of replaces their craft.',
-    examples: ['Narrated robot telemetry', 'Shared control interfaces', 'Trust rituals inside ops teams']
+    title: 'Leadership',
+    items: ['Roadmap facilitation', 'Incident playbooks', 'Trusted AI governance', 'Technical recruiting']
   },
   {
-    title: 'Responsible AI acceleration',
-    description: 'Operationalizing privacy, auditability, and education as part of every build pipeline.',
-    examples: ['Lightweight red-teaming', 'Consent-aware data pipelines', 'Playbooks for exec + IC levels']
+    title: 'Systems',
+    items: ['ROS 2 & Gazebo', 'Python', 'TypeScript', 'Edge observability', 'CI/CD enablement']
   },
   {
-    title: 'Civic impact & climate resilience',
-    description: 'Making the boring-but-critical infra legible to residents, activists, and policymakers.',
-    examples: ['Transit reliability dashboards', 'Community climate briefings', 'Grant tracking for grassroots orgs']
+    title: 'Product',
+    items: ['Service blueprints', 'User research synthesis', 'Storytelling for execs', 'Outcome-focused analytics']
   }
 ];
+
+export const githubProfile: GithubProfile = {
+  username: 'alexrobbins',
+  note: 'Recent repos focus on pairing LLM copilots with robotics ops and civic-tech data portals.'
+};

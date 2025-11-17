@@ -9,8 +9,9 @@
 .project-card {
   border: 1px solid var(--stroke);
   border-radius: 1.25rem;
-  padding: 1.75rem;
-  background: rgba(255, 255, 255, 0.02);
+  padding: 1.5rem;
+  background: var(--surface);
+  box-shadow: var(--card-shadow);
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -21,7 +22,7 @@
 
   p {
     margin: 0;
-    color: var(--text-muted);
+    color: var(--text-muted-strong);
   }
 
   ul {
@@ -45,5 +46,6 @@
     letter-spacing: 0.08em;
     font-size: 0.85rem;
     color: var(--accent);
+    text-decoration: none;
   }
 }
