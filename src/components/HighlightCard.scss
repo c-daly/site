@@ -1,0 +1,25 @@
+.highlight-card {
+  border: 1px solid var(--stroke);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0));
+  box-shadow: 0 10px 40px rgba(15, 15, 31, 0.35);
+
+  &__metric {
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+
+  h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+  }
+
+  p {
+    margin: 0;
+    color: var(--text-muted);
+  }
+}
