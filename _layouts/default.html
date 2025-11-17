@@ -1,62 +1,35 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    {% seo %}
-    <link
-      rel="stylesheet"
-      href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ page.title | default: site.title }}</title>
+    <meta name="description" content="{{ page.excerpt | default: site.description | strip_newlines | strip }}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    {% include head-custom.html %}
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}" />
   </head>
   <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
-    <div class="site-shell">
-      <header class="site-header" aria-label="Primary">
-        <div class="brand-block">
-          <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-          <p class="tagline">{{ site.description }}</p>
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="identity">
+          <span class="eyebrow">Alex Robbins</span>
+          <h1>Emerging Tech Delivery Leader</h1>
         </div>
-        <nav class="site-nav" aria-label="Section navigation">
-          <a href="#highlights">Highlights</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#experience">Experience</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <div class="header-links" aria-label="Profile links">
-          {% if site.links.linkedin %}
-          <a href="{{ site.links.linkedin }}" target="_blank" rel="noreferrer">LinkedIn</a>
-          {% endif %}
-          {% if site.links.github %}
-          <a href="{{ site.links.github }}" target="_blank" rel="noreferrer">GitHub</a>
-          {% endif %}
-          {% if site.links.resume %}
-          <a href="{{ site.links.resume }}" target="_blank" rel="noreferrer">Résumé</a>
-          {% endif %}
+        <div class="cta-group">
+          <a class="cta" href="mailto:alex@alexrobbins.dev">Book a working session</a>
+          <a class="cta secondary" href="https://www.linkedin.com/in/alexmrobbins/" target="_blank" rel="noreferrer">LinkedIn</a>
         </div>
       </header>
-      <main id="main-content" class="site-content">
-        {{ content }}
-      </main>
+      {{ content }}
       <footer class="site-footer">
-        <p>© {{ site.time | date: '%Y' }} {{ site.title }}</p>
-        <p>
-          Built with Jekyll & GitHub Pages
-          {% if site.github.repository_url %}
-          — <a href="{{ site.github.repository_url }}">source</a>
-          {% endif %}
-        </p>
+        <p>© {{ 'now' | date: '%Y' }} Alex Robbins. Building AI governance, robotics, and agentic programs that ship.</p>
       </footer>
     </div>
-    <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
   </body>
 </html>

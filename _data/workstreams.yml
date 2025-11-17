@@ -1,0 +1,24 @@
+- title: Autonomous floor runner
+  summary: Blending LLM planning with a micro-ROS drive stack so floor associates get every pick staged ahead of time.
+  stack:
+    - ROS 2
+    - LLM planner
+    - Edge TPU
+  status: active
+  impact: Projected 18% faster replenishment across 430 stores.
+- title: Capital forecasting copilots
+  summary: Pairing treasury analysts with copilots that narrate deltas, risk flags, and supporting evidence in seconds.
+  stack:
+    - Next.js
+    - LangChain
+    - Vertex AI
+  status: pilot
+  impact: 4x faster scenario modeling for the finance steering committee.
+- title: LLM governance kit
+  summary: Packaging prompts, guardrails, and audit metadata so every product org can launch responsibly by default.
+  stack:
+    - Open Policy Agent
+    - Supabase
+    - TypeScript
+  status: handoff
+  impact: Adopted by 7 product lines after a 6-week residency.
