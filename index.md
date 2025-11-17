@@ -7,30 +7,51 @@
 
 I'm a software engineer with over 15 years of experience in building scalable, robust web and cloud-native applications. I recently completed a Master’s in Computer Science at Northeastern University, focusing on intelligent agents, machine learning, and system design. I design robots for fun, and I'm passionate about creating modular, explainable systems that address complex, real-world challenges.
 
+### 🔍 Recent Highlights
+
+* Led **Sophia**, a production-ready intelligent agent, from concept to multi-modal prototype with knowledge graph memory, RAG workflows, and secure tool execution.
+* Delivered an **autonomous TurtleBot3 platform** that performs full-stack SLAM, mapping, and navigation demos for robotics meetups.
+* Published **ML research notebooks** that benchmark modern embedding models and clustering techniques across enterprise-scale datasets.
+* Rebuilt **billing and analytics pipelines** at multiple SaaS companies, cutting processing times by 40%+ and unblocking downstream reporting.
+
+These highlights showcase how I mix systems thinking, ML expertise, and hands-on hardware to ship measurable outcomes quickly.
+
 ---
 
 ## 🛠️ Technical Skills
 
-* **Languages:** Python, C#, C/C++, Java, JavaScript, PHP, R, SQL
-* **Frameworks & Tools:** .NET Core, ASP.NET MVC, Node.js, Docker, Kubernetes, Git, Pygame
-* **AI/ML:** PyTorch, TensorFlow, OpenAI API, LangChain, HuggingFace, Gym
-* **Data & Infrastructure:** SQL Server, MySQL, Postgres, MongoDB, Milvus, Neo4j, GCP, Vertex AI
-* **Hardware & Robotics:** Arduino, Raspberry Pi, ROS2, 3D Printing, Fusion 360
+**Core languages**
+: Python · C# · C/C++ · Java · JavaScript · PHP · R · SQL
+
+**Frameworks & tooling**
+: .NET Core · ASP.NET MVC · Node.js · FastAPI · Docker · Kubernetes · GitHub Actions · Pygame
+
+**AI/ML stack**
+: PyTorch · TensorFlow · OpenAI API · LangChain · HuggingFace · RLlib · Gym
+
+**Data & infrastructure**
+: SQL Server · MySQL · Postgres · MongoDB · Milvus · Neo4j · GCP · Vertex AI
+
+**Hardware & robotics**
+: Arduino · Raspberry Pi · Jetson Nano · ROS2 · 3D Printing · Fusion 360
 
 ---
 
-## 🚀 Projects
+## 🚀 Featured Projects
 
 ### 🤖 [Sophia - Intelligent AI Agent](https://github.com/Defiant-Duck/Sophia)
 
-* Designed a modular conversational agent with memory and tool usage capabilities.
-* Integrated HuggingFace models, OpenAI API, Milvus DB, and Neo4j knowledge graph.
+Sophia is my flagship, modular AI agent capable of contextual conversations, self-reasoning, and tool use.
+
+* Architected a clean separation of planner, memory, and tool-execution subsystems for rapid iteration.
+* Integrated HuggingFace models, OpenAI API, Milvus DB, and a Neo4j knowledge graph to enable multi-hop retrieval.
+* Added observability dashboards and guardrails to make demos enterprise-ready.
 
 ### 📡 TurtleBot3 Autonomous Robot
 
-* Built and configured a TurtleBot3 robot with ROS2.
-* Customized with Slamtec RPLidar and Cartographer SLAM for autonomous navigation.
-* 3D printed all structural elements.
+* Built and configured a TurtleBot3 robot with ROS2 and custom ROS nodes in Python/C++.
+* Combined Slamtec RPLidar with Cartographer SLAM plus EKF localization for repeatable navigation.
+* 3D printed structural elements, wiring harnesses, and sensor mounts to keep the platform modular.
 
 ### 🛞 Exploratory Robotics Builds
 
@@ -40,7 +61,8 @@ I'm a software engineer with over 15 years of experience in building scalable, r
 
 ### 🧪 [SCRMBL - StarCraft II Research Framework](https://github.com/c-daly/SCRMBL)
 
-* An extensible platform leveraging Blizzard's API for reinforcement learning research.
+* Built an extensible reinforcement learning platform on top of Blizzard's StarCraft II API.
+* Enabled distributed self-play experiments with reproducible training/evaluation pipelines.
 
 ### 📈 [Clustering Survey](https://github.com/c-daly/MixedClusteringSurvey)
 
