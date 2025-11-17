@@ -2,7 +2,8 @@
   border: 1px solid var(--stroke);
   border-radius: 1.5rem;
   padding: 2.5rem;
-  background: var(--card-bg);
+  background: var(--surface);
+  box-shadow: var(--card-shadow);
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
