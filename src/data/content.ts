@@ -37,6 +37,8 @@ export type GithubProfile = {
   note: string;
 };
 
+const assetBase = import.meta.env.BASE_URL ?? '/';
+
 export const profile: Profile = {
   name: 'Alex Robbins',
   role: 'Systems engineer · delivery lead',
@@ -46,7 +48,7 @@ export const profile: Profile = {
   location: 'Seattle, WA · Remote friendly',
   availability: 'Accepting embedded leadership and advisory projects for Q3 2024.',
   email: 'hello@alexrobbins.com',
-  resume: '/alex-robbins-resume.pdf',
+  resume: `${assetBase}alex-robbins-resume.pdf`,
   socials: [
     { label: 'LinkedIn', url: 'https://www.linkedin.com/in/alexrobbins' },
     { label: 'GitHub', url: 'https://github.com/alexrobbins' }

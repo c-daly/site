@@ -1,18 +1,21 @@
+name: CI
+
 on:
   push:
   pull_request:
     types: [opened, synchronize]
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: script/cibuild
+    name: Node build
     steps:
-      - uses: actions/checkout@v2
-      - uses: ruby/setup-ruby@v1
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          ruby-version: 3.1.0
-          bundler-cache: true
-      - name: build
+          node-version: 20
+          cache: 'npm'
+      - name: Install dependencies
         run: script/bootstrap
-      - name: test
+      - name: Build
         run: script/cibuild
