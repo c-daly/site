@@ -1,0 +1,33 @@
+.skills {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+}
+
+.skills-card {
+  border: 1px solid var(--stroke);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  background: var(--surface-soft);
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+  }
+
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  span {
+    border-radius: 999px;
+    border: 1px solid var(--stroke);
+    padding: 0.35rem 0.85rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+}
