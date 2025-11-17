@@ -1,7 +1,7 @@
 .hero {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  gap: 2.5rem;
   padding: 4rem 0;
 
   &__content {
@@ -10,50 +10,69 @@
     gap: 1.25rem;
   }
 
-  h1 {
-    font-size: clamp(2.5rem, 5vw, 3.75rem);
+  &__eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
     margin: 0;
   }
 
-  p {
+  &__summary {
     margin: 0;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(2.5rem, 5vw, 3.6rem);
+    line-height: 1.2;
+  }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    font-size: 0.95rem;
     color: var(--text-muted);
   }
 
-  &__eyebrow {
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--accent);
-    font-size: 0.85rem;
-  }
-
-  &__cta-group {
+  &__actions {
     display: flex;
-    gap: 1rem;
     flex-wrap: wrap;
+    gap: 0.85rem;
   }
 
   &__metrics {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 1rem;
 
     article {
       border: 1px solid var(--stroke);
-      border-radius: 1rem;
-      padding: 1rem;
-      background: rgba(255, 255, 255, 0.03);
+      border-radius: 1.25rem;
+      padding: 1.25rem;
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
     }
 
     span {
-      font-size: 2.25rem;
+      display: block;
+      font-size: 2.4rem;
       font-weight: 600;
+      margin-bottom: 0.35rem;
     }
 
     p {
+      margin: 0;
       text-transform: uppercase;
-      font-size: 0.85rem;
       letter-spacing: 0.08em;
+      font-size: 0.8rem;
+      color: var(--text-muted);
     }
+  }
+
+  &__name {
+    font-size: 2rem !important;
   }
 }

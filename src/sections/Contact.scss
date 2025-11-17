@@ -1,0 +1,32 @@
+.contact {
+  border: 1px solid var(--stroke);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  background: var(--card-bg);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+
+  &__content {
+    flex: 1 1 320px;
+
+    h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+    }
+
+    p {
+      margin: 0.85rem 0 0;
+      color: var(--text-muted);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex: 1 1 220px;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+}

@@ -1,18 +1,20 @@
 import { Hero } from './sections/Hero';
-import { Highlights } from './sections/Highlights';
-import { Workstreams } from './sections/Workstreams';
-import { Footer } from './sections/Footer';
+import { Achievements } from './sections/Achievements';
+import { Projects } from './sections/Projects';
+import { Interests } from './sections/Interests';
+import { Contact } from './sections/Contact';
 import './App.scss';
 
 function App() {
   return (
     <div className="app-shell">
-      <div className="background-grid" aria-hidden />
+      <div className="background-texture" aria-hidden />
       <main>
         <Hero />
-        <Highlights />
-        <Workstreams />
-        <Footer />
+        <Achievements />
+        <Projects />
+        <Interests />
+        <Contact />
       </main>
     </div>
   );
