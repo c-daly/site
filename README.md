@@ -17,4 +17,10 @@ The dev server runs on <http://localhost:5173> by default.
 npm run build
 ```
 
-The compiled assets live in `dist/` and can be published via GitHub Pages by pointing Pages at that folder.
+The compiled assets live in `dist/` and power the GitHub Pages deployment.
+
+## GitHub Pages deployment
+
+The repository now ships with a `Deploy site` GitHub Actions workflow that builds the React app and publishes the contents of
+`dist/` to the dedicated GitHub Pages environment. After merging to `main`, ensure the repository's Pages settings are
+configured to "GitHub Actions" so each push to `main` automatically updates the live site.

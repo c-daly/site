@@ -1,27 +1,34 @@
-import { metrics } from '../data/content';
+import { profile } from '../data/content';
 import './Hero.scss';
 
 export function Hero() {
   return (
-    <section className="hero">
+    <section className="hero" aria-labelledby="intro-title">
       <div className="hero__content">
-        <p className="hero__eyebrow">Alex Robbins · Emerging Tech Delivery Lead</p>
-        <h1>
-          I turn ambiguous agent + robotics ideas into calm launches that real teams trust.
-        </h1>
-        <p>
-          Currently coaching robotics, finance, and policy groups through generative AI adoption while
-          keeping velocity and governance in balance.
-        </p>
-        <div className="hero__cta-group">
-          <a className="btn btn--primary" href="mailto:hello@alexrobbins.com">Book working session</a>
-          <a className="btn" href="https://www.linkedin.com/in/alexrobbins" target="_blank" rel="noreferrer">
-            LinkedIn
+        <p className="hero__eyebrow">{profile.role}</p>
+        <h1 id="intro-title">{profile.tagline}</h1>
+        <p className="hero__summary">{profile.summary}</p>
+        <div className="hero__meta">
+          <span>{profile.location}</span>
+          <span>{profile.availability}</span>
+        </div>
+        <div className="hero__actions">
+          <a className="btn btn--primary" href={`mailto:${profile.email}`}>
+            Email {profile.name.split(' ')[0]}
           </a>
+          {profile.socials.map((social) => (
+            <a key={social.label} className="btn btn--ghost" href={social.url} target="_blank" rel="noreferrer">
+              {social.label}
+            </a>
+          ))}
         </div>
       </div>
-      <div className="hero__metrics">
-        {metrics.map((metric) => (
+      <div className="hero__metrics" aria-label="career metrics">
+        <article>
+          <span className="hero__name">{profile.name}</span>
+          <p>{profile.role}</p>
+        </article>
+        {profile.metrics.map((metric) => (
           <article key={metric.label}>
             <span>{metric.value}</span>
             <p>{metric.label}</p>
