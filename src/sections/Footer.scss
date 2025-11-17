@@ -1,0 +1,28 @@
+.site-footer {
+  border-top: 1px solid var(--stroke);
+  padding: 3rem 0 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+
+  h2 {
+    margin: 0;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+  }
+
+  &__eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  &__links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+}
