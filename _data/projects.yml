@@ -1,0 +1,30 @@
+- name: Sophia — intelligent agent platform
+  url: https://github.com/Defiant-Duck/Sophia
+  stack: ["LangChain", "OpenAI", "Neo4j", "Milvus"]
+  summary: Modular agent capable of goal decomposition, tool use, and secure execution sandboxes.
+  highlights:
+    - Added planner / memory / executor separation so new workflows land in <24 hours.
+    - Wired knowledge graph + vector search for grounded context with citation trails.
+    - Built audit logging, dashboards, and guardrails to keep demos enterprise-ready.
+- name: TurtleBot3 autonomous lab
+  url: https://github.com/c-daly/Robotics
+  stack: ["ROS2", "Python", "C++", "Nav2"]
+  summary: Mobile robot platform that performs SLAM, waypoint navigation, and remote teleoperation for meetups.
+  highlights:
+    - Authored ROS2 nodes for mission control, sensor fusion, and diagnostics.
+    - Tuned Cartographer + EKF localization to hit <5 cm drift over 20 m indoor routes.
+    - Designed 3D-printed mounts, wiring harnesses, and serviceable chassis parts.
+- name: SCRMBL StarCraft II research framework
+  url: https://github.com/c-daly/SCRMBL
+  stack: ["PyTorch", "RLlib", "StarCraft II API"]
+  summary: Training harness for reproducible self-play experiments in complex RTS environments.
+  highlights:
+    - Parameterized match configs + reward shaping for quick hypothesis testing.
+    - Automated cluster orchestration + logging, cutting experiment setup time by 60%.
+- name: Embedding + clustering notebooks
+  url: https://github.com/c-daly/Notebooks
+  stack: ["Python", "scikit-learn", "BERT", "SBERT"]
+  summary: Comparative studies of embedding models and clustering techniques on enterprise data sets.
+  highlights:
+    - Delivered vendor-ready scorecards for recall, drift, and compute trade-offs.
+    - Published reproducible notebooks adopted by 3 partner data science teams.
