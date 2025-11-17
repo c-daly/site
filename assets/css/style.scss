@@ -4,24 +4,45 @@
 @import "jekyll-theme-minimal";
 
 :root {
-  --bg: #05060a;
-  --card: #0f111a;
-  --card-alt: #151826;
-  --brand: #66f2d5;
-  --text: #e7ecff;
-  --muted: #99a2c2;
-  --border: rgba(255, 255, 255, 0.08);
-  --accent: #8ab4ff;
+
+  --bg: #0b1020;
+  --bg-soft: #11182e;
+  --card: #161f36;
+  --card-alt: #1c2743;
+  --brand: #7df9d3;
+  --text: #f6f8ff;
+  --muted: #c7d2f0;
+  --border: rgba(255, 255, 255, 0.18);
+  --accent: #9cc4ff;
 }
 
 body {
   font-family: "Space Grotesk", "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: radial-gradient(circle at top, rgba(102, 242, 213, 0.08), transparent 55%), var(--bg);
+
+  background: radial-gradient(circle at top, rgba(125, 249, 211, 0.18), transparent 55%), var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.7;
+
   min-height: 100vh;
   margin: 0;
 }
+
+
+p,
+li {
+  color: var(--text);
+}
+
+a {
+  color: var(--accent);
+}
+
+a:hover,
+a:focus {
+  color: var(--brand);
+}
+
+
 
 .skip-link {
   position: absolute;
@@ -89,11 +110,13 @@ body {
 }
 
 .hero {
-  background: var(--card);
+
+  background: linear-gradient(135deg, var(--card), var(--card-alt));
   padding: 2rem;
   border-radius: 20px;
   border: 1px solid var(--border);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 35px 70px rgba(5, 7, 15, 0.55);
+
 }
 
 .hero h1 {
@@ -166,11 +189,16 @@ body {
 }
 
 .card {
-  background: var(--card-alt);
+
+  background: color-mix(in srgb, var(--card-alt), var(--bg-soft) 40%);
+
   border-radius: 18px;
   padding: 1.5rem;
   border: 1px solid var(--border);
   min-height: 100%;
+
+  box-shadow: 0 20px 35px rgba(6, 8, 18, 0.4);
+
 }
 
 .card-kicker {
@@ -185,6 +213,9 @@ body {
   margin-top: 1rem;
   color: var(--brand);
   font-weight: 600;
+
+  font-size: 1rem;
+
 }
 
 .skills-grid,
