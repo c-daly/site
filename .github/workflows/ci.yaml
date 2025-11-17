@@ -12,6 +12,16 @@ jobs:
         with:
           ruby-version: 3.1.0
           bundler-cache: true
+      - name: Install system packages (build deps for native gems)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential cmake pkg-config \
+            libssl-dev zlib1g-dev libffi-dev unzip
+      - name: Verify build tools
+        run: |
+          gcc --version || true
+          cmake --version || true
+          pkg-config --version || true
       - name: build
         run: script/bootstrap
       - name: test
