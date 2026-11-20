@@ -1,40 +1,40 @@
-# Portfolio site
+# Defiant Duck
 
-This repo now uses [Vite](https://vitejs.dev/) and React instead of Jekyll so it can grow into a richer single-page experience while still deploying on GitHub Pages.
+Independent AI consulting and software engineering for **defiantduck.com**. This is a separate site from cdaly.me. The design follows the selected Open Studio direction, using the original duck logo.
 
 ## Local development
 
-```bash
-npm install
+Use Node 22 or newer. There are no package dependencies to install.
+
+```sh
 npm run dev
 ```
 
-The dev server runs on <http://localhost:5173> by default.
+Open **http://localhost:4200**. The development server binds to `127.0.0.1`, rebuilds when `src/` changes, and requires a browser refresh after a rebuild. Set `PORT` to change the port.
 
-## Production build
-
-```bash
+```sh
 npm run build
+npm run check
+npm test
+npm run preview
 ```
 
-The compiled assets live in `dist/` and power the GitHub Pages deployment.
+`dist/` is the deployable static site. It contains the homepage, three service pages, a 404 page, assets, sitemap, robots file, and custom-domain file. No server runtime is required for hosting.
 
-## One-command GitHub Pages deploy
+## Editing
 
-You can publish the already-built site to the `gh-pages` branch (the default GitHub Pages source) without configuring GitHub
-Actions:
+- `src/home.html`: homepage narrative and layout.
+- `src/content.mjs`: the three offers, fees, scopes, contact address, and domain.
+- `src/templates.mjs`: shared navigation, metadata, service pages, and cards.
+- `src/styles.css`: the selected visual design and responsive layouts.
+- `src/assets/`: the original logo, locally hosted font and its license, and the draft white paper.
 
-```bash
-npm run deploy:pages
-```
+The Opportunity Review ($500) and Project Review ($750) remain explicitly marked as proposed. The Project Plan is $750. Contact links use the existing `chris@cdaly.me` address; change `site.email` only when a replacement mailbox is ready, and update the visible address in `home.html` at the same time.
 
-The script will build the project, create a temporary git repo that contains only the production assets, and force push the
-result to the `gh-pages` branch on your `origin` remote. After running it once, open the repository settings on GitHub and
-set **Pages → Source** to `gh-pages`. Subsequent `npm run deploy:pages` runs will replace the hosted site with the latest
-build, ensuring https://your-username.github.io/ no longer 404s.
+Client examples remain anonymous. The white paper is labeled as a draft. The site contains no analytics or form backend.
 
-## GitHub Pages deployment
+## Publication
 
-The repository now ships with a `Deploy site` GitHub Actions workflow that builds the React app and publishes the contents of
-`dist/` to the dedicated GitHub Pages environment. After merging to `main`, ensure the repository's Pages settings are
-configured to "GitHub Actions" so each push to `main` automatically updates the live site.
+Publication is a separate action. The GitHub Pages workflow is started manually after the content, proposed offers, Pages settings, and domain configuration are ready. `CNAME` declares `defiantduck.com`; building the site does not change DNS or publish anything.
+
+The previous placeholder application remains available in Git history before this replacement branch.

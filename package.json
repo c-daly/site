@@ -1,26 +1,15 @@
 {
-  "name": "portfolio-site",
-  "private": true,
+  "name": "defiant-duck",
   "version": "1.0.0",
+  "private": true,
   "type": "module",
+  "description": "Defiant Duck — practical AI consulting and software engineering",
+  "engines": { "node": ">=22" },
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "deploy:pages": "script/deploy-pages"
-  },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "@types/react": "^18.2.43",
-    "@types/react-dom": "^18.2.17",
-    "@vitejs/plugin-react": "^4.2.1",
-    "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.33",
-    "sass": "^1.69.5",
-    "typescript": "^5.3.3",
-    "vite": "^5.0.10"
+    "dev": "node scripts/build.mjs && node scripts/serve.mjs --watch",
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check-site.mjs",
+    "test": "node --test scripts/serve.test.mjs",
+    "preview": "node scripts/serve.mjs"
   }
 }
