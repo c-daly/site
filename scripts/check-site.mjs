@@ -14,7 +14,7 @@ const expectedHeadStart=`<head><script async src="${containerUrl}"></script>
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 </script>`;
-assert.equal(htmlFiles.length,services.length+2,'Expected homepage, three services, and 404 page');
+assert.equal(htmlFiles.length,services.length+3,'Expected homepage, inquiry page, service pages, and 404 page');
 let checkedLinks=0;
 for(const file of htmlFiles){
   const html=await readFile(file,'utf8');
@@ -26,6 +26,11 @@ for(const file of htmlFiles){
   assert.match(html,/<meta name="description" content="[^"]+">/);
   assert.ok(html.includes(`rel="canonical" href="${site.origin}${local}"`),`${local}: canonical domain`);
   assert.doesNotMatch(html,/\{\{|Alex Robbins|Northwind Robotics|Civic Systems Lab|Compare the looks|Design studies|class="study-bar"/);
+  assert.doesNotMatch(html,/mailto:[^"]*\?subject=/,`${local}: discussion links should open the inquiry form`);
+  if(local==='/leads/'){
+    assert.match(html,/<form\b[^>]*action="https:\/\/api\.web3forms\.com\/submit"[^>]*method="post"/);
+    assert.match(html,/name="access_key" value="[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}"/i,'Configure the public Web3Forms access key for the inquiry form');
+  }
   const schema=html.match(/<script type="application\/ld\+json">([^<]+)<\/script>/);
   assert.ok(schema,`${local}: structured data`);assert.equal(JSON.parse(schema[1]).url,site.origin);
   for(const image of html.matchAll(/<img\b[^>]*>/g))assert.match(image[0],/\balt="[^"]*"/);
@@ -46,6 +51,7 @@ for(const file of htmlFiles){
 assert.equal((await readFile(path.join(root,'CNAME'),'utf8')).trim(),'defiantduck.com');
 assert.match(await readFile(path.join(root,'robots.txt'),'utf8'),/Sitemap: https:\/\/defiantduck\.com\/sitemap\.xml/);
 const sitemap=await readFile(path.join(root,'sitemap.xml'),'utf8');
-assert.equal((sitemap.match(/<loc>/g)||[]).length,4);
+assert.equal((sitemap.match(/<loc>/g)||[]).length,services.length+2);
+assert.ok(sitemap.includes(`<loc>${site.origin}/leads/</loc>`));
 assert.ok((await readFile(path.join(root,'assets','ai-adoption-whitepaper.pdf'))).subarray(0,5).equals(Buffer.from('%PDF-')));
 console.log(`Checked ${htmlFiles.length} pages, ${checkedLinks} internal links, metadata, domain files, and the white paper.`);

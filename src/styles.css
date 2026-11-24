@@ -617,6 +617,88 @@ p {
   filter: brightness(.9);
 }
 
+.lead-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: clamp(32px, 6vw, 90px);
+  padding-block: clamp(32px, 6vw, 84px);
+}
+
+.lead-intro h1 {
+  font-size: clamp(43px, 5.5vw, 76px);
+  letter-spacing: -.055em;
+  line-height: 1.05;
+}
+
+.lead-intro p {
+  margin-block: 20px;
+  max-width: 40ch;
+}
+
+.inquiry-form {
+  min-width: 0;
+  padding: clamp(20px, 4vw, 42px);
+  border-radius: 22px;
+  background: var(--soft);
+}
+
+.inquiry-form fieldset {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.inquiry-form label {
+  font-weight: 600;
+}
+
+.inquiry-form input:not([type="hidden"]):not([hidden]),
+.inquiry-form select,
+.inquiry-form textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border: 1px solid var(--muted);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--ink);
+  font: inherit;
+}
+
+.inquiry-form textarea {
+  resize: vertical;
+}
+
+.inquiry-form :focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.inquiry-form .button {
+  justify-self: start;
+  font-family: inherit;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.inquiry-form .button:disabled {
+  opacity: .7;
+  cursor: wait;
+}
+
+.inquiry-status:not(:empty) {
+  margin-top: 8px;
+}
+
+@media (max-width:800px) {
+  .lead-page { grid-template-columns: minmax(0, 1fr); }
+}
+
 .contact-email {
   display: block;
   font-size: 14px;

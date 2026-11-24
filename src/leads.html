@@ -1,0 +1,29 @@
+<div class="wrap">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Contact</span></nav>
+<section class="lead-page" aria-labelledby="lead-heading">
+  <div class="lead-intro">
+    <h1 id="lead-heading">Start a conversation.</h1>
+    <p>Tell Defiant Duck about the project or decision you have in mind. You’ll get a reply by email.</p>
+    <p>For a free 20-minute introduction, a question is enough.</p>
+    <a class="inline-link" href="mailto:{{email}}">{{email}}</a>
+  </div>
+  <form id="inquiry-form" class="inquiry-form" action="https://api.web3forms.com/submit" method="post" enctype="multipart/form-data" aria-label="Contact Defiant Duck">
+    <fieldset aria-label="Inquiry details">
+      <input type="hidden" name="access_key" value="{{formAccessKey}}">
+      <input type="hidden" name="subject" value="New Defiant Duck inquiry">
+      <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" hidden>
+      <label for="inquiry-name">Name (optional)</label>
+      <input id="inquiry-name" name="name" autocomplete="name" maxlength="120">
+      <label for="inquiry-email">Email</label>
+      <input id="inquiry-email" name="email" type="email" autocomplete="email" maxlength="254" required>
+      <label for="inquiry-topic">Topic</label>
+      <select id="inquiry-topic" name="topic">{{topicOptions}}</select>
+      <label for="inquiry-message">What would you like to discuss?</label>
+      <textarea id="inquiry-message" name="message" rows="5" maxlength="5000" required></textarea>
+      <button type="submit" class="button primary">Send inquiry</button>
+    </fieldset>
+    <p class="inquiry-status" role="status"></p>
+  </form>
+</section>
+</div>
+<script type="module" src="/assets/inquiry.js"></script>

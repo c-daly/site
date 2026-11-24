@@ -2,11 +2,11 @@ export const site = {
   name: 'Defiant Duck',
   origin: 'https://defiantduck.com',
   email: 'chris@defiantduck.com',
+  web3FormsAccessKey: '32f20619-9e33-4afb-afbb-318fdb660197',
   description: 'Practical AI consulting and software engineering for small organizations. Find a useful starting point, plan a project, and build from there.',
 };
 
-export const contact = (subject = 'A conversation about AI and software') =>
-  `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('Hello,\n\nOrganization: \nQuestion or project: \n')}`;
+export const contact = topic => `/leads/?topic=${encodeURIComponent(topic)}`;
 
 export const services = [
   {

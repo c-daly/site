@@ -14,8 +14,8 @@ export function createPreviewServer({directory=path.join(projectRoot,'dist')}={}
     if(!['GET','HEAD'].includes(request.method)){
       response.writeHead(405,{'Allow':'GET, HEAD'});response.end();return;
     }
-    let pathname;
-    try { pathname=decodeURIComponent(new URL(request.url,'http://localhost').pathname); }
+    let url,pathname;
+    try { url=new URL(request.url,'http://localhost');pathname=decodeURIComponent(url.pathname); }
     catch { response.writeHead(400);response.end('Invalid path');return; }
     const target=path.resolve(root,'.'+pathname);
     const relative=path.relative(root,target);
@@ -27,7 +27,7 @@ export function createPreviewServer({directory=path.join(projectRoot,'dist')}={}
       const info=await stat(file);
       if(info.isDirectory()) {
         if(!pathname.endsWith('/')){
-          response.writeHead(308,{'Location':pathname+'/'});response.end();return;
+          response.writeHead(308,{'Location':url.pathname.replace(/^\/+/, '/')+'/'+url.search});response.end();return;
         }
         file=path.join(file,'index.html');
       }

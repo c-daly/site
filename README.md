@@ -19,7 +19,7 @@ npm test
 npm run preview
 ```
 
-`dist/` is the deployable static site. It contains the homepage, three service pages, a 404 page, assets, sitemap, robots file, and custom-domain file. No server runtime is required for hosting.
+`dist/` is the deployable static site. It contains the homepage, the inquiry form, three service pages, a 404 page, assets, sitemap, robots file, and custom-domain file. No server runtime is required for hosting.
 
 ## Editing
 
@@ -29,9 +29,11 @@ npm run preview
 - `src/styles.css`: the selected visual design and responsive layouts.
 - `src/assets/`: the original logo, locally hosted font and its license, and the draft white paper.
 
-The AI Opportunity Review has a $500 fixed fee and the AI Project Plan has a $750 fixed fee. The AI Project Review lists a proposed $750 fee. The HTML pages use `site.email` in `src/content.mjs` for the contact address and email links. When the address changes, update the visible address and email link in the white paper PDF as well.
+The AI Opportunity Review has a $500 fixed fee and the AI Project Plan has a $750 fixed fee. The AI Project Review lists a proposed $750 fee. The HTML pages use `site.email` in `src/content.mjs` for the contact address and direct email links. When the address changes, update the visible address and email link in the white paper PDF as well.
 
-Client examples remain anonymous. The white paper is labeled as a draft. The shared page head in `src/templates.mjs` loads Google Tag Manager on every HTML page. Contact links open an email draft.
+Client examples remain anonymous. The white paper is labeled as a draft. The shared page head in `src/templates.mjs` loads Google Tag Manager on every HTML page.
+
+Discussion links open the inquiry form at `/leads/` with the topic selected. The form in `src/leads.html` posts to Web3Forms with the public `site.web3FormsAccessKey` from `src/content.mjs`. The receiving mailbox is configured in Web3Forms. The visitor’s email is the reply-to address.
 
 ## Publication
 

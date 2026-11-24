@@ -13,6 +13,9 @@ test('the preview serves real service pages, assets, and a proper 404',async t=>
   }
   const redirect=await fetch(`${base}/services/ai-project-plan`,{redirect:'manual'});
   assert.equal(redirect.status,308);assert.equal(redirect.headers.get('location'),'/services/ai-project-plan/');
+  const inquiry=await fetch(`${base}/leads?topic=AI%20Project%20Plan`);
+  assert.equal(inquiry.status,200);assert.equal(inquiry.url,`${base}/leads/?topic=AI%20Project%20Plan`);
+  assert.match(await inquiry.text(),/<form id="inquiry-form"/);
   const pdf=await fetch(`${base}/assets/ai-adoption-whitepaper.pdf`,{method:'HEAD'});
   assert.equal(pdf.status,200);assert.equal(pdf.headers.get('content-type'),'application/pdf');assert.equal(await pdf.text(),'');
   const missing=await fetch(`${base}/missing-page`);
