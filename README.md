@@ -29,7 +29,7 @@ npm run preview
 - `src/styles.css`: the selected visual design and responsive layouts.
 - `src/assets/`: the original logo, locally hosted font and its license, and the draft white paper.
 
-The Opportunity Review ($500) and Project Review ($750) remain explicitly marked as proposed. The Project Plan is $750. Contact links use the existing `chris@cdaly.me` address; change `site.email` only when a replacement mailbox is ready, and update the visible address in `home.html` at the same time.
+The AI Opportunity Review has a $500 fixed fee and the AI Project Plan has a $750 fixed fee. The AI Project Review lists a proposed $750 fee. The HTML pages use `site.email` in `src/content.mjs` for the contact address and email links. When the address changes, update the visible address and email link in the white paper PDF as well.
 
 Client examples remain anonymous. The white paper is labeled as a draft. The site contains no analytics or form backend.
 

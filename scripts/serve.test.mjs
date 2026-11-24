@@ -16,7 +16,7 @@ test('the preview serves real service pages, assets, and a proper 404',async t=>
   const pdf=await fetch(`${base}/assets/ai-adoption-whitepaper.pdf`,{method:'HEAD'});
   assert.equal(pdf.status,200);assert.equal(pdf.headers.get('content-type'),'application/pdf');assert.equal(await pdf.text(),'');
   const missing=await fetch(`${base}/missing-page`);
-  assert.equal(missing.status,404);assert.match(await missing.text(),/Let’s find your way back/);
+  assert.equal(missing.status,404);assert.match(await missing.text(),/<h1>Page not found\.<\/h1>/);
   const traversal=await fetch(`${base}/..%2fpackage.json`);
   assert.equal(traversal.status,400);
   const malformed=await fetch(`${base}/%XX`);

@@ -1,26 +1,26 @@
 export const site = {
   name: 'Defiant Duck',
   origin: 'https://defiantduck.com',
-  email: 'chris@cdaly.me',
+  email: 'chris@defiantduck.com',
   description: 'Practical AI consulting and software engineering for small organizations. Find a useful starting point, plan a project, and build from there.',
 };
 
 export const contact = (subject = 'A conversation about AI and software') =>
-  `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('Hi Chris,\n\nHere is what our organization does and where we would like help:\n\n')}`;
+  `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('Hello,\n\nOrganization: \nQuestion or project: \n')}`;
 
 export const services = [
   {
     slug: 'ai-opportunity-review',
     name: 'AI Opportunity Review',
-    question: 'Where could AI help us?',
+    question: 'Where could AI save time?',
     introduction: 'Explore your team’s work, compare useful possibilities, and choose a manageable first step.',
     price: 500,
-    proposed: true,
+    proposed: false,
     outcome: 'A prioritized shortlist and a reasoned recommendation for where to begin.',
     deliverables: [
       ['A practical shortlist', 'Up to three opportunities, including where ordinary automation or a process change may be a better fit.'],
       ['A comparison you can use', 'Likely benefits, effort, information needed, and consequences of mistakes for each option.'],
-      ['A recommended starting point', 'Why I would start there, what needs checking, and how useful pieces could connect later.'],
+      ['A recommended starting point', 'Why this opportunity is worth trying first, what needs checking, and how useful pieces could connect later.'],
     ],
     scope: 'One team or department, with up to three recurring activities to consider.',
     process: 'A preparation questionnaire, a focused working session, a concise written review, and a walkthrough with one clarification round.',
@@ -29,14 +29,14 @@ export const services = [
     example: { title: 'A support team looking for a useful first step', text: 'Compare request summaries, help finding policy information, and draft responses for staff to review. Use the team’s workload and available information to select a bounded trial, then identify what a useful result would look like.' },
     followOn: 'A focused feasibility experiment, a plan for the selected opportunity, or hands-on support for a small pilot.',
     questions: [
-      ['Do we need to know which AI tool we want?', 'No. Start with the work and the outcome you want. The review considers tools only in relation to that need.'],
+      ['Does the team need to choose an AI tool first?', 'No. Start with the work and the outcome you want. The review considers tools only in relation to that need.'],
       ['What if AI is not the best answer?', 'The recommendation can be a process change or conventional automation. The purpose is to find a useful improvement.'],
     ],
   },
   {
     slug: 'ai-project-plan',
     name: 'AI Project Plan',
-    question: 'We know what we want to build.',
+    question: 'What would it take to build this idea?',
     introduction: 'Turn a defined idea into a practical plan for scope, architecture, integration, and evaluation.',
     price: 750,
     proposed: false,
@@ -48,19 +48,19 @@ export const services = [
     ],
     scope: 'One agreed project or bounded workflow. Its smaller component steps belong in the same plan.',
     process: 'A review of supplied context, a focused working session, a written plan, and a walkthrough with one clarification round.',
-    boundary: 'We agree the boundaries before starting. Extensive investigation, implementation, and additional workflows are quoted separately.',
+    boundary: 'You agree on the project boundaries with Defiant Duck before work begins. Extensive investigation, implementation, and additional workflows are quoted separately.',
     preparation: ['The outcome you want, who will use the result, and the systems it needs to work with.', 'Relevant examples or existing documentation, plus known budget, timing, and data constraints.', 'You can come directly to this service with a defined idea.'],
     example: { title: 'Planning an internal knowledge assistant', text: 'Separate finding relevant material, preparing an answer, and checking that the answer is supported. Define the documents and access boundaries, agree representative questions, and stage the work from a focused trial to an integration.' },
     followOn: 'Prototype development, evaluation tooling, application development, systems integration, and operational handover.',
     questions: [
-      ['Do we need an Opportunity Review first?', 'No. If you already have a defined idea, you can come directly to the Project Plan.'],
-      ['Can another developer implement the plan?', 'Yes. The written plan is intended to help you brief a developer, take the work forward internally, or discuss implementation with me.'],
+      ['Is an Opportunity Review required first?', 'No. If you already have a defined idea, you can come directly to the Project Plan.'],
+      ['Can another developer implement the plan?', 'Yes. You can use the written plan to brief a developer, build with your own team, or discuss implementation with Defiant Duck.'],
     ],
   },
   {
     slug: 'ai-project-review',
     name: 'AI Project Review',
-    question: 'Could we get a second opinion?',
+    question: 'Is this project on the right track?',
     introduction: 'Assess a proposal, prototype, or existing approach and decide what deserves attention next.',
     price: 750,
     proposed: true,
@@ -73,7 +73,7 @@ export const services = [
     scope: 'One defined proposal, prototype, or application workflow, assessed against an agreed question.',
     process: 'Review of supplied material and a focused walkthrough, followed by a written assessment, readout, and one clarification round.',
     boundary: 'Deep code investigation, new benchmarks, security or compliance audits, and remediation require a separate scope.',
-    preparation: ['The decision you need to make and the proposal, design notes, or demonstration you want reviewed.', 'Representative outputs, known problems, and any existing evaluation or cost information.', 'We check that the available material is enough for a useful review before starting.'],
+    preparation: ['The decision you need to make and the proposal, design notes, or demonstration you want reviewed.', 'Representative outputs, known problems, and any existing evaluation or cost information.', 'Before work begins, Defiant Duck checks whether the material can answer your review question.'],
     example: { title: 'An assistant that gives inconsistent answers', text: 'Examine supplied examples and the workflow around the assistant. Check whether retrieved material supports the answer, distinguish observed behavior from assumptions about the cause, and recommend the next checks in order of importance.' },
     followOn: 'Targeted investigation, evaluation work, reliability or cost improvements, integration changes, and ongoing technical guidance.',
     questions: [
