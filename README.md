@@ -31,7 +31,7 @@ npm run preview
 
 The AI Opportunity Review has a $500 fixed fee and the AI Project Plan has a $750 fixed fee. The AI Project Review lists a proposed $750 fee. The HTML pages use `site.email` in `src/content.mjs` for the contact address and email links. When the address changes, update the visible address and email link in the white paper PDF as well.
 
-Client examples remain anonymous. The white paper is labeled as a draft. The site contains no analytics or form backend.
+Client examples remain anonymous. The white paper is labeled as a draft. The shared page head in `src/templates.mjs` loads Google Tag Manager on every HTML page. Contact links open an email draft.
 
 ## Publication
 

@@ -7,6 +7,13 @@ import {site, services} from '../src/content.mjs';
 const root=fileURLToPath(new URL('../dist/',import.meta.url));
 async function files(dir){return (await Promise.all((await readdir(dir,{withFileTypes:true})).map(async e=>e.isDirectory()?files(path.join(dir,e.name)):[path.join(dir,e.name)]))).flat();}
 const htmlFiles=(await files(root)).filter(f=>f.endsWith('.html'));
+const containerUrl='https://www.googletagmanager.com/gtm.js?id=GTM-KRBWMCPT';
+const expectedHeadStart=`<head><script async src="${containerUrl}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>`;
 assert.equal(htmlFiles.length,services.length+2,'Expected homepage, three services, and 404 page');
 let checkedLinks=0;
 for(const file of htmlFiles){
@@ -14,6 +21,8 @@ for(const file of htmlFiles){
   const local='/'+path.relative(root,file).replace(/index\.html$/,'');
   assert.equal((html.match(/<h1[\s>]/g)||[]).length,1,`${local}: one H1`);
   assert.match(html,/<html lang="en">/);
+  assert.ok(html.includes(expectedHeadStart),`${local}: Tag Manager loader and initializer must open the head`);
+  assert.equal(html.split(containerUrl).length-1,1,`${local}: expected one Tag Manager loader`);
   assert.match(html,/<meta name="description" content="[^"]+">/);
   assert.ok(html.includes(`rel="canonical" href="${site.origin}${local}"`),`${local}: canonical domain`);
   assert.doesNotMatch(html,/\{\{|Alex Robbins|Northwind Robotics|Civic Systems Lab|Compare the looks|Design studies|class="study-bar"/);
