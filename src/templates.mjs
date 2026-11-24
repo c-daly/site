@@ -27,7 +27,7 @@ export function head({title,description=site.description,pathname='/',noindex=fa
 }
 
 export function header(){return `<header class="site-header wrap"><a class="brand" href="/" aria-label="Defiant Duck home">${logo}<span class="wordmark">Defiant Duck<span class="brand-sub">AI & software consulting</span></span></a><nav aria-label="Main navigation"><a href="/#services">Services</a><a href="/#work">Client work</a><a href="/#approach">Approach</a><a href="/#about">About</a></nav><a href="/leads/" class="header-contact">Get in touch</a></header>`;}
-export function footer(){return `<footer class="site-footer wrap"><a class="footer-brand" href="/">Defiant Duck<span>AI consulting & software engineering</span></a><a href="mailto:${escape(site.email)}">${escape(site.email)}</a></footer>`;}
+export function footer(){return `<footer class="site-footer wrap"><a class="footer-brand" href="/">Defiant Duck<span>AI consulting & software engineering</span></a><div class="footer-links"><a href="/privacy/">Privacy policy</a><a href="mailto:${escape(site.email)}">${escape(site.email)}</a></div></footer>`;}
 function shell(title,description,pathname,body,noindex=false){return `<!doctype html><html lang="en"><head>${head({title,description,pathname,noindex})}</head><body class="site" id="top"><a class="skip-link" href="#main">Skip to content</a>${header()}<main id="main">${body}</main>${footer()}</body></html>`;}
 
 export function cards(){return services.map(s=>`<article class="service"><div class="service-intro"><p class="service-intent">“${escape(s.question)}”</p><h3>${escape(s.name)}</h3><p>${escape(s.introduction)}</p></div><div class="service-delivery"><span class="mini-label">You leave with</span><p>${escape(s.outcome)}</p></div><div class="service-price"><strong>$${s.price}</strong><span>${s.proposed?'Proposed fixed fee':'Fixed fee'}</span></div><a class="service-link" href="/services/${s.slug}/">Explore the ${s.slug==='ai-project-plan'?'plan':'review'}<span class="sr-only"> — ${escape(s.name)}</span></a></article>`).join('');}
@@ -48,6 +48,11 @@ export function renderLeads(template){
    .replace('{{formAccessKey}}',escape(site.web3FormsAccessKey))
    .replace('{{topicOptions}}',topics.map(topic => `<option>${escape(topic)}</option>`).join(''));
  return shell('Contact Defiant Duck', 'Ask about AI consulting, software development, or a free 20-minute introduction.', '/leads/', body);
+}
+
+export function renderPrivacy(template){
+ const body = template.replaceAll('{{email}}',escape(site.email));
+ return shell('Privacy policy | Defiant Duck', 'How Defiant Duck handles inquiries, uses analytics and advertising cookies, and responds to privacy requests.', '/privacy/', body);
 }
 
 export function renderService(service){
