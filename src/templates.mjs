@@ -12,6 +12,17 @@ export function head({title,description=site.description,pathname='/',noindex=fa
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 </script>
+<script>
+  function gtag_report_conversion(url) {
+    gtag('event', 'conversion', {
+      send_to: 'AW-884143512/ez8mCKHA05ABEJjry6UD',
+      event_callback: function () {
+        if (url !== undefined) window.location.assign(url);
+      }
+    });
+    return false;
+  }
+</script>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escape(title)}</title><meta name="description" content="${escape(description)}"><meta name="theme-color" content="#fdfbf7">${noindex?'<meta name="robots" content="noindex,follow">':''}<link rel="canonical" href="${site.origin}${pathname}"><meta property="og:type" content="website"><meta property="og:site_name" content="Defiant Duck"><meta property="og:title" content="${escape(title)}"><meta property="og:description" content="${escape(description)}"><meta property="og:url" content="${site.origin}${pathname}"><meta property="og:image" content="${site.origin}/assets/defiant-duck.png"><meta property="og:image:alt" content="Defiant Duck logo"><meta name="twitter:card" content="summary"><link rel="icon" type="image/png" href="/assets/defiant-duck.png"><link rel="stylesheet" href="/styles.css"><link rel="preload" href="/assets/ubuntu-sans.ttf" as="font" type="font/ttf" crossorigin><script type="application/ld+json">${JSON.stringify(schema).replaceAll('<','\\u003c')}</script>`;
 }
 

@@ -22,11 +22,14 @@ form.addEventListener('submit', async event => {
     });
     const result = await response.json();
     if (!response.ok || result.success !== true) throw new Error('Submission unconfirmed');
-    form.reset();
-    status.textContent = 'Thank you. Your inquiry has been sent to Defiant Duck.';
   } catch {
     status.textContent = 'Delivery could not be confirmed. Try again or email Defiant Duck directly.';
+    return;
   } finally {
     fields.disabled = false;
   }
+
+  form.reset();
+  status.textContent = 'Thank you. Your inquiry has been sent to Defiant Duck.';
+  window.gtag_report_conversion?.();
 });
